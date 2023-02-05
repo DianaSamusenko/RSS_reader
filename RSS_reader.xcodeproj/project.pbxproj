@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		A0753526298C11F500202E52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0753525298C11F500202E52 /* AppDelegate.swift */; };
 		A0753528298C11F500202E52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0753527298C11F500202E52 /* SceneDelegate.swift */; };
-		A075352A298C11F500202E52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0753529298C11F500202E52 /* ViewController.swift */; };
-		A075352D298C11F500202E52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A075352B298C11F500202E52 /* Main.storyboard */; };
+		A075352A298C11F500202E52 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0753529298C11F500202E52 /* NewsViewController.swift */; };
 		A075352F298C11F500202E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A075352E298C11F500202E52 /* Assets.xcassets */; };
 		A0753532298C11F500202E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0753530298C11F500202E52 /* LaunchScreen.storyboard */; };
+		A075353B298C153B00202E52 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A075353A298C153B00202E52 /* SnapKit */; };
+		A075353D298C1B7200202E52 /* NewsDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A075353C298C1B7200202E52 /* NewsDescriptionViewController.swift */; };
+		A0753541298C5E4F00202E52 /* NewsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0753540298C5E4F00202E52 /* NewsParser.swift */; };
+		A0D18F42298DE546001F8E85 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A0D18F41298DE546001F8E85 /* Kingfisher */; };
+		A0DA3E98298C6F81008CE781 /* NewsItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA3E97298C6F81008CE781 /* NewsItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A0753522298C11F500202E52 /* RSS_reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSS_reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0753525298C11F500202E52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0753527298C11F500202E52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A0753529298C11F500202E52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A075352C298C11F500202E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A0753529298C11F500202E52 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		A075352E298C11F500202E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0753531298C11F500202E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0753533298C11F500202E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A075353C298C1B7200202E52 /* NewsDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDescriptionViewController.swift; sourceTree = "<group>"; };
+		A0753540298C5E4F00202E52 /* NewsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsParser.swift; sourceTree = "<group>"; };
+		A0DA3E97298C6F81008CE781 /* NewsItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0D18F42298DE546001F8E85 /* Kingfisher in Frameworks */,
+				A075353B298C153B00202E52 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,13 +66,31 @@
 			children = (
 				A0753525298C11F500202E52 /* AppDelegate.swift */,
 				A0753527298C11F500202E52 /* SceneDelegate.swift */,
-				A0753529298C11F500202E52 /* ViewController.swift */,
-				A075352B298C11F500202E52 /* Main.storyboard */,
-				A075352E298C11F500202E52 /* Assets.xcassets */,
-				A0753530298C11F500202E52 /* LaunchScreen.storyboard */,
+				A0753540298C5E4F00202E52 /* NewsParser.swift */,
+				A0753542298C6D6900202E52 /* Screens */,
+				A0753543298C6D9000202E52 /* Resources */,
 				A0753533298C11F500202E52 /* Info.plist */,
 			);
 			path = RSS_reader;
+			sourceTree = "<group>";
+		};
+		A0753542298C6D6900202E52 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA3E97298C6F81008CE781 /* NewsItemTableViewCell.swift */,
+				A0753529298C11F500202E52 /* NewsViewController.swift */,
+				A075353C298C1B7200202E52 /* NewsDescriptionViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A0753543298C6D9000202E52 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A075352E298C11F500202E52 /* Assets.xcassets */,
+				A0753530298C11F500202E52 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +109,10 @@
 			dependencies = (
 			);
 			name = RSS_reader;
+			packageProductDependencies = (
+				A075353A298C153B00202E52 /* SnapKit */,
+				A0D18F41298DE546001F8E85 /* Kingfisher */,
+			);
 			productName = RSS_reader;
 			productReference = A0753522298C11F500202E52 /* RSS_reader.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +141,10 @@
 				Base,
 			);
 			mainGroup = A0753519298C11F400202E52;
+			packageReferences = (
+				A0753539298C153B00202E52 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A0D18F40298DE546001F8E85 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = A0753523298C11F500202E52 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +161,6 @@
 			files = (
 				A0753532298C11F500202E52 /* LaunchScreen.storyboard in Resources */,
 				A075352F298C11F500202E52 /* Assets.xcassets in Resources */,
-				A075352D298C11F500202E52 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A075352A298C11F500202E52 /* ViewController.swift in Sources */,
+				A075352A298C11F500202E52 /* NewsViewController.swift in Sources */,
+				A0753541298C5E4F00202E52 /* NewsParser.swift in Sources */,
 				A0753526298C11F500202E52 /* AppDelegate.swift in Sources */,
+				A0DA3E98298C6F81008CE781 /* NewsItemTableViewCell.swift in Sources */,
+				A075353D298C1B7200202E52 /* NewsDescriptionViewController.swift in Sources */,
 				A0753528298C11F500202E52 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +183,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A075352B298C11F500202E52 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A075352C298C11F500202E52 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A0753530298C11F500202E52 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +320,7 @@
 				INFOPLIST_FILE = RSS_reader/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +348,7 @@
 				INFOPLIST_FILE = RSS_reader/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +386,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A0753539298C153B00202E52 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		A0D18F40298DE546001F8E85 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A075353A298C153B00202E52 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0753539298C153B00202E52 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		A0D18F41298DE546001F8E85 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0D18F40298DE546001F8E85 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A075351A298C11F400202E52 /* Project object */;
 }
