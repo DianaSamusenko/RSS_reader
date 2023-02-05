@@ -35,6 +35,13 @@ final class NewsItemTableViewCell: UITableViewCell {
         return label
     }()
     
+    private lazy var isReadImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage.init(systemName: "circle.fill")
+        imageView.tintColor = .black
+        return imageView
+    }()
+    
     // MARK: Life cycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -50,7 +57,7 @@ final class NewsItemTableViewCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(10)
-            $0.right.equalToSuperview().inset(16)
+            $0.right.equalToSuperview().inset(30)
             $0.left.equalTo(itemImageView.snp.right).offset(16)
         }
 
@@ -58,8 +65,15 @@ final class NewsItemTableViewCell: UITableViewCell {
         pubDateLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(5)
             $0.bottom.equalToSuperview().inset(10)
-            $0.right.equalToSuperview().inset(16)
+            $0.right.equalToSuperview().inset(30)
             $0.left.equalTo(itemImageView.snp.right).offset(16)
+        }
+        
+        contentView.addSubview(isReadImageView)
+        isReadImageView.snp.makeConstraints {
+            $0.right.equalToSuperview().inset(15)
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(10)
         }
     }
     
@@ -74,13 +88,14 @@ final class NewsItemTableViewCell: UITableViewCell {
         titleLabel.text = nil
         pubDateLabel.text = nil
         itemImageView.image = nil
+        isReadImageView.image = UIImage.init(systemName: "circle.fill")
     }
 }
 
 // MARK: Methods
 
 extension NewsItemTableViewCell {
-    func setUpData(title: String, date: String, imageURL: String?) {
+    func setUpData(title: String, date: String, imageURL: String?, isRead: Bool) {
         titleLabel.text = title
         pubDateLabel.text = date
         guard let imageURLString = imageURL else {
@@ -88,5 +103,8 @@ extension NewsItemTableViewCell {
             return
         }
         itemImageView.kf.setImage(with: URL(string: imageURLString))
+        if isRead {
+            isReadImageView.image = nil
+        }
     }
 }

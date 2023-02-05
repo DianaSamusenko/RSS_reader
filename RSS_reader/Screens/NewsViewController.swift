@@ -57,6 +57,12 @@ final class NewsViewController: UIViewController {
         
         fetchData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -74,10 +80,14 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("NewsItemTableViewCell can't be created")
         }
         cell.selectionStyle = .none
+        
+        let readLinksArray = UserDefaults.standard.object(forKey: "ReadLinks") as? [String] ?? [String]()
+        
         cell.setUpData(
             title: rssItems[indexPath.row].title,
             date: rssItems[indexPath.row].pubDate,
-            imageURL: rssItems[indexPath.row].imageURL
+            imageURL: rssItems[indexPath.row].imageURL,
+            isRead: readLinksArray.contains(rssItems[indexPath.row].link)
         )
         return cell
     }
@@ -85,6 +95,10 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = NewsDescriptionViewController(rssItem: rssItems[indexPath.row])
         navigationController?.pushViewController(viewController, animated: true)
+        
+        var readLinksArray = UserDefaults.standard.object(forKey: "ReadLinks") as? [String] ?? [String]()
+        readLinksArray.append(rssItems[indexPath.row].link)
+        UserDefaults.standard.set(Array(Set(readLinksArray)), forKey: "ReadLinks")
     }
 }
 
